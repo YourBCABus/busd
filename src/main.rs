@@ -28,7 +28,7 @@ async fn graphql(
 
 #[get("/graphiql")]
 async fn graphiql() -> HttpResponse {
-    let html = graphiql_source("http://localhost:3000/api");
+    let html = graphiql_source("/api");
     HttpResponse::Ok()
         .content_type("text/html; charset=utf-8")
         .body(html)
