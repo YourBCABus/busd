@@ -8,6 +8,8 @@ graphql_object!(Query: () |&self| {
     }
 });
 
-pub fn root_node() -> RootNode<'static, Query, EmptyMutation<()>> {
+pub type Schema = RootNode<'static, Query, EmptyMutation<()>>;
+
+pub fn schema() -> Schema {
     RootNode::new(Query, EmptyMutation::<()>::new())
 }
