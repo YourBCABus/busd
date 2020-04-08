@@ -8,7 +8,6 @@ edition = "2018"
 
 [dependencies]
 tokio = { version = "0.2", features = ["full"] }
-hyper = "0.12.35"
+warp = "0.2.2"
 juniper = "0.14.2"
-juniper_hyper = "0.5.2"
-futures = "0.3.4"
+juniper_warp = "0.5.2"

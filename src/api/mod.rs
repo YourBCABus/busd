@@ -1,5 +1,4 @@
 use juniper::{RootNode, EmptyMutation};
-use std::sync::Arc;
 
 pub struct Query;
 
@@ -9,6 +8,6 @@ graphql_object!(Query: () |&self| {
     }
 });
 
-pub fn root_node<'a>() -> Arc<RootNode<'a, Query, EmptyMutation<()>>> {
-    Arc::new(RootNode::new(Query, EmptyMutation::<()>::new()))
+pub fn root_node() -> RootNode<'static, Query, EmptyMutation<()>> {
+    RootNode::new(Query, EmptyMutation::<()>::new())
 }
